@@ -1,0 +1,11 @@
+version: '2'
+services:
+  master:
+    build: .
+    ports:
+      - "80:8080"
+    volumes:
+      - "./shared/config.json:/var/lib/data/auth0-adldap/config.json"
+      - "./shared/certs:/var/lib/data/auth0-adldap/certs"
+    environment:
+      ENABLE_HEALTHCHECK: 1
